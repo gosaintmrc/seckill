@@ -2,6 +2,8 @@ package com.gosaint.dao;
 
 import com.gosaint.domain.SuccessKilled;
 
+import org.apache.ibatis.annotations.Param;
+
 /**
  * @Authgor: gosaint
  * @Description:
@@ -15,7 +17,7 @@ public interface SuccessKilledMapper {
      * @param userPhone
      * @return
      */
-    int insertSuccessKilled(long seckillId,long userPhone);
+    int insertSuccessKilled(@Param("seckillId") long seckillId,@Param("userPhone") long userPhone);
 
     /**
      * 查询秒杀成功记录

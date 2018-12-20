@@ -5,7 +5,6 @@
 <mapper namespace="com.gosaint.dao.SuccessKilledMapper">
 
     <insert id="insertSuccessKilled">
-        /** 主键冲突 insert会错误 ignore返回0*/
         insert ignore into success_killed(seckill_id,user_phone)
               values(#{seckillId},#{userPhone});
     </insert>

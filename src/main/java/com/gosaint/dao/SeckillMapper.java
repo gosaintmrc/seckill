@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.gosaint.domain.Seckill;
 
+import org.apache.ibatis.annotations.Param;
+
 /**
  * @Authgor: gosaint
  * @Description:
@@ -19,7 +21,7 @@ public interface SeckillMapper {
      * @param killTime
      * @return 减库存以影响的行数
      */
-    int reduceNumber(long seckillId,Date killTime);
+    int reduceNumber(@Param("seckillId") long seckillId,@Param("killTime") Date killTime);
 
     /**
      * 查询秒杀库存
@@ -34,5 +36,5 @@ public interface SeckillMapper {
      * @param limit
      * @return
      */
-    List<Seckill> queryAll(int offet,int limit);
+    List<Seckill> queryAll(@Param("offet") int offet,@Param("limit") int limit);
 }

@@ -78,7 +78,7 @@ public class SeckillServiceImpl implements SeckillService {
             final long seckillId, final long userPhone,
             final String md5)
             throws SeckillExeception, RepeatExeception, SeckillCloseExeception {
-        if (md5 == null || md5.equals(getMD5(seckillId))) {
+        if (md5 == null || !md5.equals(getMD5(seckillId))) {
             throw new SeckillExeception("秒杀数据重写");
         }
         //减库存 记录秒杀行为
